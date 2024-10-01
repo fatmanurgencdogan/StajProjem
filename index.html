@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
+    <title>Blue Screen</title>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">ChatApp</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Rooms</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Settings</a></li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-    <div class="burger-menu">
-      <div class="line1">fatmanuuğğğrr</div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </nav>
+    <nav class="navbar">
+        <div class="logo"><p class="smile">:)</p></div>
+        <a class = "name" href="#">BlueScreen</a>
 
-  <script src="script.js"></script>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Your Watchlist</a>
+        </div>
+
+        <div class="search-container"></div>
+            <input type="text" id="search-input" placeholder="İzlemek için bir şeyler ara..." />
+            <button onclick="search()">Ara</button>
+        </div>
+
+        <div class="profile">
+            <a href="#">Log In</a>
+            <a href="#">Sign Up</a>
+        </div>
+
+    </nav>
+
+    <div id="results"></div>
 </body>
 </html>
- 

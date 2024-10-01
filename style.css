@@ -1,3 +1,94 @@
-.burger-menu{
+/* Genel stiller */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
+/* Navbar stilleri */
+.navbar {
+    display: flex; /* Flexbox kullanarak yatay hizalama */
+    justify-content: space-between; /* Öğeleri dağıt */
+    align-items: center; /* Dikey olarak ortala */
+    padding: 10px 20px; /* İç boşluk ekle */
+    background-color: #f8f8f8; /* Arka plan rengi */
+    border-bottom: 1px solid #5cd6d6; /* Alt kenar çizgisi */
+    border-top: 1px solid #5cd6d6
+}
+
+.name{
+    text-decoration:overline;
+}
+
+.smile{
+    text-align: center;
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 13%;
+    margin: 10px;
+    color: #abffed;
+}
+
+/* Bağlantı stilleri */
+.nav-links {
+    display: flex; /* Yatay dizilim için flex kullan */
+    justify-content: center; /* Ortala */
+    flex-grow: 1; /* Genişlemesine izin ver */
+}
+
+.nav-links a {
+    margin: 15px; /* Sağdan ve soldan boşluk bırak */
+    text-decoration: none; /* Alt çizgi kaldır */
+    color: #000; /* Yazı rengi */
+    font-size: 18px; /* Yazı boyutu */
+}
+
+/* Profil stilleri */
+.profile {
+    
+    display: flex; /* Yatay dizilim için flex kullan */
+    align-items: center; /* Dikey olarak ortala */
+}
+
+.profile a {
+    font-size: 14px;
+    margin-right: 10px;
+    text-decoration: none; /* Alt çizgi kaldır */
+    color: #007BFF; /* Yazı rengi */
+}
+
+/* Arama çubuğu stilleri */
+.search-container {
+    display: flex; /* Yatay dizilim için flex kullan */
+    align-items: center; /* Dikey olarak ortala */
+    
+
+    
+}
+
+#search-input {
+    padding: 5px; /* İç boşluk */
+    width: 400px; /* Genişlik */
+    margin-right: 5px; /* Sağdan boşluk bırak */
+    border: 1px solid #ccc; /* Kenar çizgisi */
+    border-radius: 4px; /* Kenarları yuvarla */
+}
+#search-input::placeholder {
+    color: #e8e2ec;
+}
+
+button {
+    padding: 5px 15px; /* İç boşluk */
+    border: none; /* Kenar çizgisi kaldır */
+    background-color: #007BFF; /* Arka plan rengi */
+    color: white; /* Yazı rengi */
+    cursor: pointer; /* İşaretçi değişimi */
+    border-radius: 4px; /* Kenarları yuvarla */
+    margin-right: 15px;
+}
+
+/* Bağlantılara ve butona üzerine gelince değişim ekleyin */
+.nav-links a:hover,
+.profile a:hover,
+button:hover {
+    color: #0056b3; /* Renk değişimi */
 }
