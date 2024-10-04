@@ -1,94 +1,69 @@
-/* Genel stiller */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Navbar stilleri */
 .navbar {
-    display: flex; /* Flexbox kullanarak yatay hizalama */
-    justify-content: space-between; /* Öğeleri dağıt */
-    align-items: center; /* Dikey olarak ortala */
-    padding: 10px 20px; /* İç boşluk ekle */
-    background-color: #f8f8f8; /* Arka plan rengi */
-    border-bottom: 1px solid #5cd6d6; /* Alt kenar çizgisi */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #94d0e2;
+    border-bottom: 1px solid #5cd6d6;
     border-top: 1px solid #5cd6d6
 }
-
-.name{
-    text-decoration:overline;
+.BSlogo{
+    width: 160px;
 }
-
-.smile{
-    text-align: center;
-    background-color: #007BFF;
-    padding: 10px;
-    border-radius: 13%;
-    margin: 10px;
-    color: #abffed;
-}
-
-/* Bağlantı stilleri */
 .nav-links {
-    display: flex; /* Yatay dizilim için flex kullan */
-    justify-content: center; /* Ortala */
-    flex-grow: 1; /* Genişlemesine izin ver */
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
-
 .nav-links a {
-    margin: 15px; /* Sağdan ve soldan boşluk bırak */
-    text-decoration: none; /* Alt çizgi kaldır */
-    color: #000; /* Yazı rengi */
-    font-size: 18px; /* Yazı boyutu */
+    margin: 15px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
 }
-
-/* Profil stilleri */
-.profile {
-    
-    display: flex; /* Yatay dizilim için flex kullan */
-    align-items: center; /* Dikey olarak ortala */
+.profile {   
+    display: flex;
+    align-items: center;
 }
-
 .profile a {
     font-size: 14px;
-    margin-right: 10px;
-    text-decoration: none; /* Alt çizgi kaldır */
-    color: #007BFF; /* Yazı rengi */
+    margin-right: 5px;
+    margin-left:10px;
+    text-decoration: none;
+    color: #007BFF;
 }
-
-/* Arama çubuğu stilleri */
 .search-container {
-    display: flex; /* Yatay dizilim için flex kullan */
-    align-items: center; /* Dikey olarak ortala */
-    
-
-    
+    display: flex;
+    align-items: center;
+    margin-right:25px;   
 }
-
 #search-input {
-    padding: 5px; /* İç boşluk */
-    width: 400px; /* Genişlik */
-    margin-right: 5px; /* Sağdan boşluk bırak */
-    border: 1px solid #ccc; /* Kenar çizgisi */
-    border-radius: 4px; /* Kenarları yuvarla */
+    padding: 5px;
+    width: 400px;
+    margin-right: 10px;
+    border: 1px solid #2112aa;
+    border-radius: 4px;
 }
 #search-input::placeholder {
-    color: #e8e2ec;
+    color: #a8a2ac;
 }
-
 button {
-    padding: 5px 15px; /* İç boşluk */
-    border: none; /* Kenar çizgisi kaldır */
-    background-color: #007BFF; /* Arka plan rengi */
-    color: white; /* Yazı rengi */
-    cursor: pointer; /* İşaretçi değişimi */
-    border-radius: 4px; /* Kenarları yuvarla */
-    margin-right: 15px;
+    padding: 5px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px; 
+    margin-right: 64px; 
 }
-
-/* Bağlantılara ve butona üzerine gelince değişim ekleyin */
+.navbar a:hover,
 .nav-links a:hover,
 .profile a:hover,
-button:hover {
-    color: #0056b3; /* Renk değişimi */
-}
+    button:hover {
+        color: #0056b3;
+    }
