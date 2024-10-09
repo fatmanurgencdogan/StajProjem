@@ -6,50 +6,73 @@ const main = document.getElementById('main');
 
 getMovies(API_URL);
 
-function getMovies(url){
-
+function getMovies(url) {
   fetch(url).then(res => res.json()).then(data => {
     console.log(data.results)
     showMovies(data.results);
   })
-  .catch(error => console.log('Hata:', error)); // Hata mesajını kontrol et
-
+  .catch(error => console.log('Fault:', error));
 }
 
-function showMovies(data){
+function showMovies(data) {
   main.innerHTML = '';
-  
+
   data.forEach(movie => {
     const {title, poster_path, vote_average, overview} = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
+
+    // Puanı formatla ve renk belirle
+    const formattedVote = vote_average.toFixed(1);
+    let voteColor;
+    if (vote_average >= 8) {
+      voteColor = 'green';
+    } else if (vote_average >= 5) {
+      voteColor = 'orange';
+    } else {
+      voteColor = 'red';
+    }
+
     movieEl.innerHTML = `
-        <img src="${IMG_URL+poster_path}" alt="${title}">
-
-      <div class="movie-info">
-        <h3>${title}</h3>
-        <span class="${getColor(vote_average)}">${vote_average}</span>
-      </div>
-
-      <div class="overview">
-
-        <h3>overview</h3>
-        ${overview}
-      </div>
-    `
+        <img src="${IMG_URL + poster_path}" alt="${title}">
+        <div class="movie-info">
+          <h3>${title}</h3>
+          <span style="background-color: ${voteColor};">${formattedVote}</span>
+        </div>
+        <div class="overview">
+          <h3>Overview</h3>
+          ${overview}
+        </div>
+    `;
 
     main.appendChild(movieEl);
-  })
+  });
 }
 
-function getColor(vote){
-  if(vote >= 8){
-    return 'green'
+// Slider fonksiyonları
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
   }
-  else if(vote >= 5){
-    return "orange"
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  else{
-    return 'red'
-  }
-}  
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
