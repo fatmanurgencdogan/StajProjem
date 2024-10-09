@@ -1,4 +1,4 @@
-/* Genel stil */
+
 *{
     box-sizing: border-box;
 }
@@ -6,7 +6,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8ff93;
+    /* background-image: linear-gradient(to right,#000811, #001F3F,#000811); */
+    background-image: linear-gradient(to right,#cfb375, #EAD8B1,#cfb375);
+
 }
 
 .navbar {
@@ -47,7 +49,6 @@ body {
     align-items: center;
     margin-right: 25px;
     border-radius: 50%;
-    font-family: inherit;
 }
 
 #search-input {
@@ -66,7 +67,7 @@ body {
 .search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #E88D67;
+    background-color: #ff7930;
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -95,21 +96,22 @@ body {
     color: #ffb393;
 }
 
-
-/* Slideshow stili */
-.slideshow-container {
+ .slideshow-container {
     position: relative;
-    background: #f8ff93;
+    background: #6A9AB0;
     margin-top: 20px;
 }
 
 .mySlides {
     display: none;
-    padding: 80px;
+    padding: 20px;
+    margin-bottom: 50px;
     text-align: center;
+    position: relative;
+    top: 50px;
 }
 
-/* Slideshow yön butonları */
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -117,7 +119,7 @@ body {
     width: auto;
     margin-top: -30px;
     padding: 16px;
-    color: #888;
+    color: #EAD8B1;
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -130,15 +132,15 @@ body {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    background-color: #ffffffe1;
+    color: #ff7930;
 }
 
-/* Dot/bullet/indicator container */
 .dot-container {
+    transform: translate(0,-47px);
     text-align: center;
     padding: 20px;
-    background: #8f828256;
+    background: #3A6D8C;
 }
 
 .dot {
@@ -146,70 +148,47 @@ body {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbbbbb;
+    background-color: #ff7930;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-    background-color: #717171;
-}
+    background-color: #cd591a;
+} 
 
 q {
     font-style: italic;
+    color: #ffff;
 }
 
 .author {
-    color: cornflowerblue;
+    color: #001F3F;
+    margin-bottom: 50px;
+
 }
 
-.main{
+#main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
-
-.movie{
-    width: 300px;
-    margin: 1rem;
+.movie {
+    flex-basis: calc(18% - 20px); 
+    margin: 10px;
     border-radius: 3px;
     box-shadow: 0.2px 4px 5px rgba(0,0,0,1);
     background-color:#ffffff;
     position: relative;
     overflow: hidden;
-}.main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Eşit boşluk bırakır */
+    max-height: 550px;
+    font-size: 13px;
+
 }
-
-.movie {
-    width: calc(33.333% - 1rem); /* Her bir film kartının genişliğini ayarlama */
-    margin: 0.5rem; /* Kartlar arasındaki boşluk */
-    border-radius: 3px;
-    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 1);
-    background-color: #ffffff;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Responsive tasarım için */
-@media(max-width: 900px) {
-    .movie {
-        width: calc(50% - 1rem); /* Mobil cihazlarda 2 kart */
-    }
-}
-
-@media(max-width: 600px) {
-    .movie {
-        width: calc(100% - 1rem); /* Küçük ekranlarda 1 kart */
-    }
-}
-
-
 .movie img{
     width: 100%;
+    
 }
 
 .movie-info{
@@ -226,7 +205,7 @@ q {
 }
 
 .movie-info span{
-    background-color: orangered;
+    background-color: #ff7930;
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-weight: bold;
@@ -237,7 +216,8 @@ q {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: lightblue;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.941);
     padding: 1rem;
     max-height: 100%;
     transform: translateY(101%);
@@ -283,3 +263,20 @@ q {
         width: 70px;
     }
 }
+
+
+
+/* Responsive tasarım için */
+@media(max-width: 900px) {
+    .movie {
+        width: calc(50% - 1rem); /* Mobil cihazlarda 2 kart */
+    }
+}
+
+@media(max-width: 600px) {
+    .movie {
+        width: calc(100% - 1rem); /* Küçük ekranlarda 1 kart */
+    }
+}
+
+
