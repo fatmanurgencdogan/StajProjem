@@ -1,5 +1,4 @@
-
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -7,7 +6,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     /* background-image: linear-gradient(to right,#000811, #001F3F,#000811); */
-    background-image: linear-gradient(to right,#cfb375, #EAD8B1,#cfb375);
+    background-image: linear-gradient(to right, #ff5404b1, #2388dab4);
 
 }
 
@@ -67,7 +66,7 @@ body {
 .search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #ff7930;
+    background-color: #cd591a;
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -96,23 +95,24 @@ body {
     color: #ffb393;
 }
 
- .slideshow-container {
+.slideshow-container {
     position: relative;
-    background: #6A9AB0;
+    background: #498dac;
     margin-top: 20px;
 }
 
 .mySlides {
-    display: none;
+    font-size: 20px;
     padding: 20px;
     margin-bottom: 50px;
     text-align: center;
     position: relative;
     top: 50px;
+    display: none;
 }
 
-
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -131,32 +131,11 @@ body {
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: #ffffffe1;
     color: #ff7930;
 }
-
-.dot-container {
-    transform: translate(0,-47px);
-    text-align: center;
-    padding: 20px;
-    background: #3A6D8C;
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #ff7930;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-    background-color: #cd591a;
-} 
 
 q {
     font-style: italic;
@@ -169,29 +148,48 @@ q {
 
 }
 
+.home-movies-title {
+    font-size: 38px;
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color:#ffffff
+}
+
+.title-movies-container {
+    transform: translate(0, 43px);
+    text-align: center;
+    padding: 25px;
+    background: #cd591a;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .movie {
-    flex-basis: calc(18% - 20px); 
+    flex-basis: calc(10% - 20px);
     margin: 10px;
     border-radius: 3px;
-    box-shadow: 0.2px 4px 5px rgba(0,0,0,1);
-    background-color:#ffffff;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 1);
+    background-color: #ffffff;
     position: relative;
     overflow: hidden;
     max-height: 550px;
     font-size: 13px;
 
 }
-.movie img{
+
+.movie img {
     width: 100%;
-    
+
 }
 
-.movie-info{
+.movie-info {
     color: #000;
     display: flex;
     align-items: center;
@@ -200,18 +198,19 @@ q {
     letter-spacing: 0.5px;
 }
 
-.movie-info h3{
-    margin-top: 0;
+.movie-info h3 {
+    margin-top: 100;
 }
 
-.movie-info span{
+.movie-info span {
     background-color: #ff7930;
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-weight: bold;
 }
 
-.overview{
+.overview {
+    font-size: 11px;
     position: absolute;
     left: 0;
     right: 0;
@@ -224,8 +223,172 @@ q {
     transition: transform 0.3s ease-in
 }
 
-.movie:hover .overview{
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie:hover .overview {
     transform: translateY(0);
+}
+
+#movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px; /* Footer'a biraz boşluk bırak */
+}
+  
+#movie-list div {
+    margin: 10px;
+    text-align: center;
+}
+  
+#movie-list img {
+    max-width: 150px; /* Film poster boyutunu ayarlayın */
+    border-radius: 8px;
+}
+
+/* 
+.home-series-title {
+    font-size: 38px;
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color:#ffffff;
+    display: block;
+}
+
+.title-series-container {
+    text-align: center;
+    padding: 20px;
+    background: #4780a8;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+  
+#series-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+  
+.series {
+    width: 200px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+  
+.series:hover {
+    transform: scale(1.05);
+}
+  
+.series img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+  
+.series-info {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.series-info h3 {
+    margin-top: 0;
+}
+
+.series-info span {
+    background-color: #ff7930;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.series:hover .overview {
+    transform: translateY(0);
+}
+
+#series-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+#series-list div {
+    margin: 10px;
+    text-align: center;
+}
+  
+#series-list img {
+    max-width: 15px;
+    max-height: 15px;
+    border-radius: 8px;
+} */
+
+.footer {
+    background-color: #cd591a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-message {
+    font-size: 20px;
+}
+
+.keep-watching {
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 40px;
+}
+
+.owner {
+    display: inline;
+    font-size: 12px;
+}
+
+.name {
+    display: inline;
+    font-size: 14px;
+    color: #001F3F;
+}
+
+.footer-social-media {
+    margin-top: 10px;
+}
+
+.footer-social-media a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    
+}
+.footer-social-media img {
+    width: 19px; /* Genişlik ayarı */
+    height: auto; /* Yüksekliği otomatik ayarlamak için */
+    margin: 0 5px; /* İkonlar arasına boşluk eklemek için */
+}
+
+.footer-social-media a:hover {
+    color: orangered;
 }
 
 /* Responsive tasarım için medya sorguları */
@@ -241,7 +404,8 @@ q {
     #search-input {
         width: 200px;
     }
-    #search-button{
+
+    #search-button {
 
         width: 70px;
     }
@@ -259,24 +423,23 @@ q {
     #search-input {
         width: 100px;
     }
-    #search-button{
+
+    #search-button {
         width: 70px;
     }
 }
 
-
-
 /* Responsive tasarım için */
 @media(max-width: 900px) {
     .movie {
-        width: calc(50% - 1rem); /* Mobil cihazlarda 2 kart */
+        width: calc(50% - 1rem);
+        /* Mobil cihazlarda 2 kart */
     }
 }
 
 @media(max-width: 600px) {
     .movie {
-        width: calc(100% - 1rem); /* Küçük ekranlarda 1 kart */
+        width: calc(100% - 1rem);
+        /* Küçük ekranlarda 1 kart */
     }
 }
-
-
