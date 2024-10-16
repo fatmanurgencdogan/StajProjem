@@ -33,8 +33,8 @@
     </div>
 
     <div class="profile">
-      <a href="login.html">Log In</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="login.php">Log In</a>
+      <a href="registration.php">Sign Up</a>
     </div>
 
   </nav>
