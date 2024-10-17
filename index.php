@@ -122,10 +122,10 @@
          step into the land of dreamland. We wish you a good time.</p>
 
       <div class="footer-social-media">
-        <a href="#"><img class="Twitter-icon" src="twitter.png"></a>
-        <a href="#"><img class="Instagram-icon" src="instagram.png"></a>
-        <a href="#"><img class="LinkedIn-icon" src="linkedin.png"></a>
-        <a href="#"><img class="Gmail-icon" src="gmail.png"></a>
+        <a href="https://x.com/fatmanurgncdgn"><img class="Twitter-icon" src="twitter.png"></a>
+        <a href="https://www.instagram.com/fnurgncdgn"><img class="Instagram-icon" src="instagram.png"></a>
+        <a href="https://www.linkedin.com/in/fatma-nur-gen%C3%A7do%C4%9Fan-876a002a7/"><img class="LinkedIn-icon" src="linkedin.png"></a>
+        <a href="mailto:fgencdogan@gmail.com"><img class="Gmail-icon" src="gmail.png"></a>
       </div>
 
       <h1 class="keep-watching">KEEP WATCHING..</h1>
