@@ -30,15 +30,18 @@ body {
     position: relative;
 }
 
-.nav-title a {
+.nav-link {
     margin: 15px;
     text-decoration: none;
     color: #000;
     font-size: 18px;
 }
 
-.nav-title a:hover {
+.nav-link:hover, .active {
     color: #ffb393;
+}
+.active {
+    color: #db6a3a;
 }
 
 .search-container {

@@ -22,9 +22,9 @@
     <a href="#"><img class="BSlogo" src="BlueScreenLogo.png"></a>
 
     <div class="nav-title">
-      <a href="#">Movies</a>
-      <a href="#">Series</a>
-      <a href="#">Your Watchlist</a>
+      <a class = "nav-link" href="movies.php">Movies</a>
+      <a class = "nav-link" href="series.php">Series</a>
+      <a class = "nav-link" href="watchlist.php">Your Watchlist</a>
     </div>
 
     <div class="search-container">
@@ -33,8 +33,8 @@
     </div>
 
     <div class="profile">
-      <a href="login.html">Log In</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="login.php">Log In</a>
+      <a href="registration.php">Sign Up</a>
     </div>
 
   </nav>
