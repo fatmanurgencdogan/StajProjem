@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar">
-    <a href="#"><img class="BSlogo" src="BlueScreenLogo.png"></a>
+    <a href="#"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
     <div class="nav-title">
       <a class = "nav-link" href="movies.php">Movies</a>
@@ -34,7 +34,7 @@
 
     <div class="profile">
       <a href="login.php">Log In</a>
-      <a href="registration.php">Sign Up</a>
+      <a href="signup.php">Sign Up</a>
     </div>
 
   </nav>
@@ -47,10 +47,10 @@
          step into the land of dreamland. We wish you a good time.</p>
 
       <div class="footer-social-media">
-        <a href="#"><img class="Twitter-icon" src="twitter.png"></a>
-        <a href="#"><img class="Instagram-icon" src="instagram.png"></a>
-        <a href="#"><img class="LinkedIn-icon" src="linkedin.png"></a>
-        <a href="#"><img class="Gmail-icon" src="gmail.png"></a>
+        <a href="#"><img class="Twitter-icon" src="css/images/twitter.png"></a>
+        <a href="#"><img class="Instagram-icon" src="css/images/instagram.png"></a>
+        <a href="#"><img class="LinkedIn-icon" src="css/images/linkedin.png"></a>
+        <a href="#"><img class="Gmail-icon" src="css/images/gmail.png"></a>
       </div>
 
       <h1 class="keep-watching">KEEP WATCHING..</h1>

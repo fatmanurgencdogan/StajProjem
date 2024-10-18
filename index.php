@@ -34,7 +34,7 @@
 
     <div class="profile">
       <a href="login.php">Log In</a>
-      <a href="registration.php">Sign Up</a>
+      <a href="signup.php">Sign Up</a>
     </div>
 
   </nav>

@@ -48,7 +48,7 @@ if(isset($_POST["enter"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="login_signup.css">
+    <link rel="stylesheet" href="css/login_signup.css">
 
 
     <style>
@@ -142,7 +142,7 @@ if(isset($_POST["enter"])){
             
             <button type="submit" name="enter">Log In</button>
         </form>
-        <p>Don't have an account yet? <a href="registration.php">Register now</a></p>
+        <p>Don't have an account yet? <a href="signup.php">Register now</a></p>
     </div>
 </body>
 

@@ -34,7 +34,7 @@ if(isset($_POST["save"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="login_signup.css">
+    <link rel="stylesheet" href="css/login_signup.css">
 
 
     <style>
@@ -119,7 +119,7 @@ if(isset($_POST["save"])){
     <div class="container">
         <a href="index.php" class="back-home">← Home</a>
         <h2>Sign Up</h2>
-        <form action="registration.php" method="POST">
+        <form action="signup.php" method="POST">
             <label for="username">Name:</label>
             <input type="text" id="username" name="username" required>
 
