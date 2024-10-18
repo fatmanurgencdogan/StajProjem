@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Blue Screen</title>
   <link rel="icon" type="image/x-icon" sizes="167x167" href="BlueScreenLogo4.png">
   <link rel="stylesheet"
@@ -23,8 +23,8 @@
 
     <div class="nav-title">
       <a class = "nav-link" href="movies.php">Movies</a>
-      <a class = "nav-link active" href="series.php">Series</a>
-      <a class = "nav-link" href="watchlist.php">Your Watchlist</a>
+      <a class = "nav-link" href="series.php">Series</a>
+      <a class = "nav-link active" href="watchlist.php">Your Watchlist</a>
     </div>
 
     <div class="search-container">

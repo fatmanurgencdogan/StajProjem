@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Blue Screen</title>
   <link rel="icon" type="image/x-icon" sizes="167x167" href="BlueScreenLogo4.png">
   <link rel="stylesheet"
@@ -47,10 +47,10 @@
          step into the land of dreamland. We wish you a good time.</p>
 
       <div class="footer-social-media">
-        <a href="#"><img class="Twitter-icon" src="css/images/twitter.png"></a>
-        <a href="#"><img class="Instagram-icon" src="css/images/instagram.png"></a>
-        <a href="#"><img class="LinkedIn-icon" src="css/images/linkedin.png"></a>
-        <a href="#"><img class="Gmail-icon" src="css/images/gmail.png"></a>
+        <a href="https://x.com/fatmanurgncdgn"><img class="Twitter-icon" src="css/images/twitter.png"></a>
+        <a href="https://www.instagram.com/fnurgncdgn"><img class="Instagram-icon" src="css/images/instagram.png"></a>
+        <a href="https://www.linkedin.com/in/fatma-nur-gen%C3%A7do%C4%9Fan-876a002a7/"><img class="LinkedIn-icon" src="css/images/linkedin.png"></a>
+        <a href="mailto:fgencdogan@gmail.com"><img class="Gmail-icon" src="css/images/gmail.png"></a>
       </div>
 
       <h1 class="keep-watching">KEEP WATCHING..</h1>

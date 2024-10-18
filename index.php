@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Blue Screen</title>
   <link rel="icon" type="image/x-icon" sizes="167x167" href="BlueScreenLogo4.png">
   <link rel="stylesheet"
@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar">
-    <a href="#"><img class="BSlogo" src="BlueScreenLogo.png"></a>
+    <a href="#"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
     <div class="nav-title">
       <a class = "nav-link" href="movies.php">Movies</a>
@@ -92,6 +92,7 @@
       </div>
     </div>
   </main> 
+
 <!--   
   <div class="title-series-container"></div> 
   <div class="home-series-title">Popular Series</div> -->
@@ -122,10 +123,10 @@
          step into the land of dreamland. We wish you a good time.</p>
 
       <div class="footer-social-media">
-        <a href="https://x.com/fatmanurgncdgn"><img class="Twitter-icon" src="twitter.png"></a>
-        <a href="https://www.instagram.com/fnurgncdgn"><img class="Instagram-icon" src="instagram.png"></a>
-        <a href="https://www.linkedin.com/in/fatma-nur-gen%C3%A7do%C4%9Fan-876a002a7/"><img class="LinkedIn-icon" src="linkedin.png"></a>
-        <a href="mailto:fgencdogan@gmail.com"><img class="Gmail-icon" src="gmail.png"></a>
+        <a href="https://x.com/fatmanurgncdgn"><img class="Twitter-icon" src="css/images/twitter.png"></a>
+        <a href="https://www.instagram.com/fnurgncdgn"><img class="Instagram-icon" src="css/images/instagram.png"></a>
+        <a href="https://www.linkedin.com/in/fatma-nur-gen%C3%A7do%C4%9Fan-876a002a7/"><img class="LinkedIn-icon" src="css/images/linkedin.png"></a>
+        <a href="mailto:fgencdogan@gmail.com"><img class="Gmail-icon" src="css/images/gmail.png"></a>
       </div>
 
       <h1 class="keep-watching">KEEP WATCHING..</h1>
@@ -136,7 +137,7 @@
 
   </footer>
 
-  <script src="script.js"></script>
+  <script src="css/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
   crossorigin="anonymous"></script>
