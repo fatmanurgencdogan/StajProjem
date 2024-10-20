@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/movies.css">
+
   <title>Blue Screen</title>
-  <link rel="icon" type="image/x-icon" sizes="167x167" href="css/images/BlueScreenLogo4.png">
-  <link rel="stylesheet"
+    <link rel="icon" type="image/x-icon" sizes="167x167" href="css/images/BlueScreenLogo4.png">
+    <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
   integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/2p3W4w6J7X7d5R4t5n5T5l6Yz0R7m5Q6Xj+3Nz" crossorigin="anonymous">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    </head>
 
 <body>
   <nav class="navbar">
-    <a href="#"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
+    <a href="index.php"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
     <div class="nav-title">
       <a class = "nav-link active" href="movies.php">Movies</a>
@@ -38,6 +42,107 @@
     </div>
 
   </nav>
+
+        <div class="movies-container favorites">
+            <h1>Favorites</h1>
+            <div class="movies-grid">
+                 <div class="card" data-id="123456">
+                    <div class="img">
+                        <img src="https://unsplash.it/500/1000" alt="">
+                    </div>
+                    <div class="info">
+                        <h2>Movie Name</h2>
+                        <div class="single-info">
+                            <span>Rate: </span>
+                            <span>10 / 10</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Release Date: </span>
+                            <span>10-04-2022</span>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="movies-container trending">
+            <h1>Trending</h1>
+            <div class="movies-grid">
+                 <div class="card" data-id="123456">
+                    <div class="img">
+                        <img src="https://unsplash.it/500/1000" alt="">
+                    </div>
+                    <div class="info">
+                        <h2>Movie Name</h2>
+                        <div class="single-info">
+                            <span>Rate: </span>
+                            <span>10 / 10</span>
+                        </div>
+                        <div class="single-info">
+                            <span>Release Date: </span>
+                            <span>10-04-2022</span>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+  <div class="popup-container">
+        <span class="x-icon">&#10006;</span>
+        <div class="content">
+            <div class="left">
+                <div class="poster-img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+                <div class="single-info">
+                    <span>Add to favorites:</span>
+                    <span class="heart-icon">&#9829;</span>
+                </div>
+            </div>
+            <div class="right">
+                <h1>Movie Title</h1>
+                <h3>Movie Tagline</h3>
+                <div class="single-info-container">
+                    <div class="single-info">
+                        <span>Language:</span>
+                        <span>English</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Length:</span>
+                        <span>120 minutes</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Rate:</span>
+                        <span>10 / 10</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Budget:</span>
+                        <span>1350000$</span>
+                    </div>
+                    <div class="single-info">
+                        <span>Release Date:</span>
+                        <span>05-07-2022</span>
+                    </div>
+                </div>
+                <div class="genres">
+                    <h2>Genres</h2>
+                    <ul>
+                        <li>Action</li>
+                        <li>Drama</li>
+                        <li>Romance</li>
+                    </ul>
+                </div>
+                <div class="popup-overview">
+                    <h2>Overview</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere necessitatibus, quos molestiae fuga voluptatem totam odit voluptates ullam et distinctio?</p>
+                </div>
+                <div class="trailer">
+                    <h2>Trailer</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Kmo8NLKkfcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>  
 
   <footer class="footer">
 
@@ -60,6 +165,11 @@
     </div>
 
   </footer>
+
+  <script src="css/movies.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
+  crossorigin="anonymous"></script>
 
   
 </body>

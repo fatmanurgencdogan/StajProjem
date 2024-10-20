@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-image: linear-gradient(to right,#000811, #001F3F,#000811); */
+    background-image: linear-gradient(to right, #ff5404b1, #2388dab4);
+}
+
+.footer {
+    background-color: #cd591a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-message {
+    font-size: 20px;
+}
+
+.keep-watching {
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 40px;
+}
+
+.owner {
+    display: inline;
+    font-size: 12px;
+}
+
+.name {
+    display: inline;
+    font-size: 14px;
+    color: #001F3F;
+}
+
+.footer-social-media {
+    margin-top: 10px;
+}
+
+.footer-social-media a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    
+}
+.footer-social-media img {
+    width: 19px; /* Genişlik ayarı */
+    height: auto; /* Yüksekliği otomatik ayarlamak için */
+    margin: 0 5px; /* İkonlar arasına boşluk eklemek için */
+}
+
+.footer-social-media a:hover {
+    color: orangered;
+}

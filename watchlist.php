@@ -19,7 +19,7 @@
 
 <body>
   <nav class="navbar">
-    <a href="#"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
+    <a href="index.php"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
     <div class="nav-title">
       <a class = "nav-link" href="movies.php">Movies</a>
@@ -61,7 +61,11 @@
 
   </footer>
 
-  
+  <script src="css/series.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
+  crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

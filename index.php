@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
+
   <title>Blue Screen</title>
   <link rel="icon" type="image/x-icon" sizes="167x167" href="BlueScreenLogo4.png">
   <link rel="stylesheet"
@@ -19,7 +22,7 @@
 
 <body>
   <nav class="navbar">
-    <a href="#"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
+    <a href="index.php"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
     <div class="nav-title">
       <a class = "nav-link" href="movies.php">Movies</a>
@@ -42,37 +45,37 @@
   <div class="slideshow-container">
 
     <div class="mySlides">
-      <q>Sometimes it’s the smallest things that take up the most room in your heart.</q>
+      <div class="quote">Sometimes it’s the smallest things that take up the most room in your heart.</div>
       <p class="author">- (Winnie the Pooh)</p>
     </div>
 
     <div class="mySlides">
-      <q>After all, tomorrow is another day.</q>
+      <div class="quote">After all, tomorrow is another day.</div>
       <p class="author">- (Gone with the Wind)</p>
     </div>
 
     <div class="mySlides">
-      <q>I don't want to survive. I want to live.</q>
+      <div class="quote">I don't want to survive. I want to live.</div>
       <p class="author">- (The Hunger Games)</p>
     </div>
 
     <div class="mySlides">
-      <q>Hope is a good thing, maybe the best of things, and no good thing ever dies.</q>
+      <div class="quote">Hope is a good thing, maybe the best of things, and no good thing ever dies.</div>
       <p class="author">- (The Shawshank Redemption)</p>
     </div>
 
     <div class="mySlides">
-      <q>You don’t have to be a hero to save the world.</q>
+      <div class="quote">You don’t have to be a hero to save the world.</div>
       <p class="author">- (The Amazing Spider-Man)</p>
     </div>
 
     <div class="mySlides">
-      <q>You have to see the world for what it is, not for what you want it to be.</q>
+      <div class="quote">You have to see the world for what it is, not for what you want it to be.</div>
       <p class="author">- (The Pursuit of Happyness)</p>
     </div>
 
     <div class="mySlides">
-      <q>This isn’t a game. This is a life.</q>
+      <div class="quote">This isn’t a game. This is a life.</div>
       <p class="author">- (12 Angry Men)</p>
     </div>
 
