@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <button id="load-more">Load More</button>
+        <button id="load-more-movies">Load More</button>
     </div>
     <!-- <div class="movies-container trending">
         <h1>Trending</h1>
@@ -183,7 +183,8 @@
         integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
         crossorigin="anonymous"></script>
 
-
+    
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
 </body>
 
 </html>

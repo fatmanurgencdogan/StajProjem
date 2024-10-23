@@ -1,45 +1,43 @@
-const api_key = 'f3090c60bbf7d2ca05c8a7afe0f60361'; // API anahtarınızı buraya yazın
-const genres_list_http = 'https://api.themoviedb.org/3/genre/movie/list'; // film türlerini getirecek
-const movie_topRated_http = 'https://api.themoviedb.org/3/movie/top_rated'; // top rated filmleri getirecek
+const api_key = 'f3090c60bbf7d2ca05c8a7afe0f60361'; 
+const genres_list_http = 'https://api.themoviedb.org/3/genre/tv/list'; 
+const series_topRated_http = 'https://api.themoviedb.org/3/tv/top_rated'; 
 
 const categoryList = document.getElementById('category-list');
-const movieTopRated = document.querySelector('.movieTopRated');
+const seriesTopRated = document.querySelector('.seriesTopRated');
 
 fetch(genres_list_http + '?api_key=' + api_key)
   .then(async data => showCategories(await data.json()))
   .catch(error => console.error('Hata:', error));
 
 function showCategories(data) {
-  console.log(data);
   categoryList.innerHTML = '';
   data.genres.forEach(category => {
     const { name } = category;
     const categoryElement = document.createElement('li');
 
     categoryElement.innerHTML = `
-              <li>${name}</li>
-          `;
+            <li>${name}</li>
+        `;
 
     categoryList.appendChild(categoryElement);
   });
 }
-//////////////////////////////////////////////////////////////
+
 let currentPage = 1;
 
-function fetchMovies(page){
-fetch(movie_topRated_http + '?api_key=' + api_key + '&page=' + page)
-  .then(async data => showTopRatedMovies(await data.json()))
-  .catch(error => console.error('Hata:', error));
+function fetchSeries(page) {
+  fetch(series_topRated_http + '?api_key=' + api_key + '&page=' + page)
+    .then(async data => showTopRatedSeries(await data.json()))
+    .catch(error => console.error('Hata:', error));
 }
 
-function showTopRatedMovies(data) {
-  console.log(data);
-  movieTopRated.innerHTML = '';
-  data.results.forEach(movie => {
-    const { title, poster_path, vote_average, overview } = movie;
-    const movieTopRatedElement = document.createElement('div');
-   
-    movieTopRatedElement.classList.add('movie');
+function showTopRatedSeries(data) {
+  seriesTopRated.innerHTML = '';
+  data.results.forEach(series => {
+    const { name, poster_path, vote_average, overview } = series;
+    const seriesTopRatedElement = document.createElement('div');
+
+    seriesTopRatedElement.classList.add('series');
 
     // Puanı formatla ve renk belirle
     const formattedVote = vote_average.toFixed(1);
@@ -52,10 +50,10 @@ function showTopRatedMovies(data) {
       voteColor = 'red';
     }
 
-    movieTopRatedElement.innerHTML = `
-          <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
-          <div class="movie-info">
-            <h3>${title}</h3>
+    seriesTopRatedElement.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${name}">
+          <div class="series-info">
+            <h3>${name}</h3>
             <span style="background-color: ${voteColor};">${formattedVote}</span>
           </div>
           <div class="overview">
@@ -64,20 +62,19 @@ function showTopRatedMovies(data) {
           </div>
       `;
 
-    movieTopRated.appendChild(movieTopRatedElement);
+    seriesTopRated.appendChild(seriesTopRatedElement);
   });
 }
 
-// "Load More" butonu için bir işlev
-const loadMoreBtn = document.getElementById('load-more-movies'); // Load More butonunu yakalayın
+// "Load More" butonu
+const loadMoreBtn = document.getElementById('load-more-series'); 
 loadMoreBtn.addEventListener('click', () => {
-  currentPage++; // Sayfayı artır
-  fetchMovies(currentPage); // Yeni sayfayı getir
+  currentPage++;
+  fetchSeries(currentPage);
 });
 
 // İlk sayfa ile başlat
-fetchMovies(currentPage);
-
+fetchSeries(currentPage);
 
 //ScrollToUp butonu////////////////////////
 // Butonu kontrol eden fonksiyon
