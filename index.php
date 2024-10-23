@@ -91,7 +91,7 @@
 
   <main id="movies">
     <div class="movie">
-    <span class="vote" data-vote="4.7">4.7</span>
+      <span class="vote" data-vote="4.7">4.7</span>
       <div class="movie-info">
         <h3>Movie Title</h3>
       </div>

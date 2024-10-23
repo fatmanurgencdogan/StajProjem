@@ -54,6 +54,9 @@ body {
     color: #ffffff;
     background-color: #191919;
     z-index: 10;
+    position: relative;
+    left: calc(50% - 40px );
+    cursor: pointer;
 }
 
 #load-more:hover {
@@ -86,10 +89,10 @@ body {
 .card img {
     max-width: 250px;
 }
-/* 
+ 
 .card p {
-    font-size: 5px;
-} */
+    font-size: 15px;
+} 
 
 .search {
     display: flex;

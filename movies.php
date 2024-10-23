@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/movies.css">
+    <link rel="stylesheet" href="css/style.css">
+
 
     <title>Blue Screen</title>
     <link rel="icon" type="image/x-icon" sizes="167x167" href="css/images/BlueScreenLogo4.png">

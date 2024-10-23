@@ -38,13 +38,30 @@ function showTopRatedMovies(data) {
   data.results.forEach(movie => {
     const { title, poster_path, vote_average, overview } = movie;
     const movieTopRatedElement = document.createElement('div');
-    
-    movieTopRatedElement.classList.add('card');
+   
+    movieTopRatedElement.classList.add('movie');
+
+    // Puanı formatla ve renk belirle
+    const formattedVote = vote_average.toFixed(1);
+    let voteColor;
+    if (vote_average >= 8) {
+      voteColor = 'green';
+    } else if (vote_average >= 5) {
+      voteColor = 'orange';
+    } else {
+      voteColor = 'red';
+    }
+
     movieTopRatedElement.innerHTML = `
-          <h3>${title}</h3>
           <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
-          <p>Rating: ${vote_average}</p>
-          <p>${overview}</p>
+          <div class="movie-info">
+            <h3>${title}</h3>
+            <span style="background-color: ${voteColor};">${formattedVote}</span>
+          </div>
+          <div class="overview">
+            <h3>Overview</h3>
+            ${overview}
+          </div>
       `;
 
     movieTopRated.appendChild(movieTopRatedElement);
@@ -60,4 +77,3 @@ loadMoreBtn.addEventListener('click', () => {
 
 // İlk sayfa ile başlat
 fetchMovies(currentPage);
-
