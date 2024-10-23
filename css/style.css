@@ -32,10 +32,13 @@ body {
     display: none;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
-    top: 50%; /* Dikeyde %50'ye yerleştir */
-    transform: translateY(-50%); /* Ortalamak için %50 yukarı kaydır */
+    top: 50%;
+    /* Dikeyde %50'ye yerleştir */
+    transform: translateY(-50%);
+    /* Ortalamak için %50 yukarı kaydır */
     padding: 16px;
     font-size: 20px;
     font-weight: bold;
@@ -47,11 +50,13 @@ body {
 }
 
 .prev {
-    left: 0; /* Sol kenara sabitle */
+    left: 0;
+    /* Sol kenara sabitle */
 }
 
 .next {
-    right: 0; /* Sağ kenara sabitle */
+    right: 0;
+    /* Sağ kenara sabitle */
 }
 
 .prev:hover,
@@ -72,35 +77,47 @@ body {
 }
 
 .home-movies-title {
-    font-size: 38px;
+    font-size: 60px;
     font-family: "Afacad Flux", sans-serif;
     font-weight: 700;
     text-align: center;
     position: relative;
-    z-index: 1;
-    color:#ffffff
+    z-index: 5;
+    color: #ffffff;
+    transform: translate(0,-40px);
 }
 
 .title-movies-container {
     transform: translate(0, 43px);
     text-align: center;
     padding: 25px;
-    background: #cd591a;
+    background: #197dff;
+    width: 350px;    
+    margin: -8px 50% 0 40%;
+
+}
+.title-movies-container1 {
+    transform: translate(0, 43px);
+    justify-content: center;
+    padding: 25px;
+    background: #f7701c;
+    width: 350px;    
+    margin: -18px 48px 0px 800px;
 }
 
-
-#main {
+#movies {
     display: flex;
+    margin: 30px 250px 90px 250px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .movie {
-    flex-basis: calc(10% - 20px);
+    flex-basis: calc(18% - 5px);
     margin: 10px;
     border-radius: 3px;
-    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 1);
-    background-color: #ffffff;
+    box-shadow: 0.2px 4px 7px rgba(0, 0, 0, 0.5);
+    background-color: #191919;
     position: relative;
     overflow: hidden;
     max-height: 550px;
@@ -110,27 +127,32 @@ body {
 
 .movie img {
     width: 100%;
-
 }
 
 .movie-info {
-    color: #000;
+    font-family: "Afacad Flux", sans-serif;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem 1rem;
     letter-spacing: 0.5px;
+    background-color: #191919;
 }
 
 .movie-info h3 {
-    margin:0;
+    margin: 0;
 }
 
-.movie-info span {
+.movie span {
     background-color: #ff7930;
     padding: 0.25rem 0.5rem;
-    border-radius: 3px;
+    border-radius: 30px;
     font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-top: -5px;
+
 }
 
 .overview {
@@ -140,7 +162,7 @@ body {
     right: 0;
     bottom: 0;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.941);
+    background-color: rgba(0, 0, 0, 0.829);
     padding: 1rem;
     max-height: 100%;
     transform: translateY(101%);
@@ -152,24 +174,9 @@ body {
 }
 
 .movie:hover .overview {
+    font-family:  "Afacad Flux", sans-serif;
+    font-size: 15px;
     transform: translateY(0);
-}
-
-#movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 20px; /* Footer'a biraz boşluk bırak */
-}
-  
-#movie-list div {
-    margin: 10px;
-    text-align: center;
-}
-  
-#movie-list img {
-    max-width: 150px; /* Film poster boyutunu ayarlayın */
-    border-radius: 8px;
 }
 
 /* Responsive tasarım için medya sorguları */

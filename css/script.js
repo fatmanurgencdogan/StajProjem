@@ -1,8 +1,8 @@
 const API_KEY = 'f3090c60bbf7d2ca05c8a7afe0f60361';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY;
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY ;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const main = document.getElementById('main');
+const movies = document.getElementById('movies');
 
 getMovies(API_URL);
 
@@ -12,12 +12,18 @@ function getMovies(url) {
     showMovies(data.results);
   })
   .catch(error => console.log('Fault:', error));
+
+  fetch(BASE_URL+'/search/movie?query=Azrael&api_key='+ API_KEY ).then(res => res.json()).then(data => {
+    console.log(data.results)
+  })
+  .catch(error => console.log('Fault:', error));
 }
 
 function showMovies(data) {
-  main.innerHTML = '';
+  movies.innerHTML = '';
 
   data.forEach(movie => {
+    console.log(data);
     const {title, poster_path, vote_average, overview} = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
@@ -45,7 +51,7 @@ function showMovies(data) {
         </div>
     `;
 
-    main.appendChild(movieEl);
+    movies.appendChild(movieEl);
   });
 }
 
