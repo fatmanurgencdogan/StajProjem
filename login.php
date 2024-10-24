@@ -24,7 +24,7 @@ if(isset($_POST["enter"])){
             session_start();
             $_SESSION["username"]= $thisReg["username"]; 
             $_SESSION["email"]= $thisReg["email"];   
-            header("location:profile.php");     // giriş yapıldıktan sonra nereye yönlendireceğini belirler.
+            header("location:index.php");     // giriş yapıldıktan sonra nereye yönlendireceğini belirler.
             exit();
         }
         else{

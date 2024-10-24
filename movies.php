@@ -1,3 +1,7 @@
+<?php
+session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
         <a href="index.php"><img class="BSlogo" src="css/images/BlueScreenLogo.png"></a>
 
         <div class="nav-title">
-            <a class="nav-link active" href="movies.php">Movies</a>
+            <a class="nav-link" href="movies.php">Movies</a>
             <a class="nav-link" href="series.php">Series</a>
             <a class="nav-link" href="watchlist.php">Your Watchlist</a>
         </div>
@@ -44,10 +48,16 @@
         </div>
 
         <div class="profile">
-            <a href="login.php">Log In</a>
-            <a href="signup.php">Sign Up</a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- Eğer kullanıcı giriş yapmışsa Profil ve Çıkış Yap göster -->
+                <a href="profile.php">Profil</a>
+                <a href="logout.php">Çıkış Yap</a>
+            <?php else: ?>
+                <!-- Giriş yapılmamışsa Log In / Sign Up göster -->
+                <a href="login.php">Log In</a>
+                <a href="signup.php">Sign Up</a>
+            <?php endif; ?>
         </div>
-
     </nav>
 
     <div class="categories">
@@ -161,7 +171,7 @@
         integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
         crossorigin="anonymous"></script>
 
-        <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
 
 </body>
 

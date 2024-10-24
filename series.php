@@ -1,3 +1,7 @@
+<?php
+session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,7 @@
 
         <div class="nav-title">
             <a class="nav-link" href="movies.php">Movies</a>
-            <a class="nav-link active" href="series.php">Series</a>
+            <a class="nav-link" href="series.php">Series</a>
             <a class="nav-link" href="watchlist.php">Your Watchlist</a>
         </div>
 
@@ -43,10 +47,16 @@
         </div>
 
         <div class="profile">
-            <a href="login.php">Log In</a>
-            <a href="signup.php">Sign Up</a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- Eğer kullanıcı giriş yapmışsa Profil ve Çıkış Yap göster -->
+                <a href="profile.php">Profil</a>
+                <a href="logout.php">Çıkış Yap</a>
+            <?php else: ?>
+                <!-- Giriş yapılmamışsa Log In / Sign Up göster -->
+                <a href="login.php">Log In</a>
+                <a href="signup.php">Sign Up</a>
+            <?php endif; ?>
         </div>
-
     </nav>
 
     <div class="categories">
@@ -59,17 +69,17 @@
 
     <div class="serieTopRated">
         <div class="serie">
-            <img src="https://unsplash.it/500/1000" alt="">        
-                <div class="serie-info">
-                    <h3>Series Name</h3>
-                    <div class="vote">
-                        <span>Rate: </span>
-                        <span>10 / 10</span>
-                    </div>    
+            <img src="https://unsplash.it/500/1000" alt="">
+            <div class="serie-info">
+                <h3>Series Name</h3>
+                <div class="vote">
+                    <span>Rate: </span>
+                    <span>10 / 10</span>
                 </div>
-                <div class="overview">
-                    <h3>Overview</h3>
-                </div>
+            </div>
+            <div class="overview">
+                <h3>Overview</h3>
+            </div>
         </div>
     </div>
 

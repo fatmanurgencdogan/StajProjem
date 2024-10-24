@@ -65,11 +65,14 @@ body {
 
 .serie {
     flex-basis: calc(18% - 5px);
-    max-width: 250px;
-    position: relative;
     margin: 10px;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 7px rgba(0, 0, 0, 0.5);
+    background-color: #191919;
+    position: relative;
     overflow: hidden;
-    background-color: ;
+    max-height: 550px;
+    font-size: 13px;
 }
 
 .serie img {

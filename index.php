@@ -1,3 +1,7 @@
+<?php
+session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,11 +39,18 @@
       <button class="search-button" onclick="search()">Search</button>
     </div>
 
-    <div class="profile">
-      <a href="login.php">Log In</a>
-      <a href="signup.php">Sign Up</a>
-    </div>
 
+    <div class="profile">
+      <?php if (isset($_SESSION['username'])): ?>
+        <!-- Eğer kullanıcı giriş yapmışsa Profil ve Çıkış Yap göster -->
+        <a href="profile.php">Profil</a>
+        <a href="logout.php">Çıkış Yap</a>
+      <?php else: ?>
+        <!-- Giriş yapılmamışsa Log In / Sign Up göster -->
+        <a href="login.php">Log In</a>
+        <a href="signup.php">Sign Up</a>
+      <?php endif; ?>
+    </div>
   </nav>
 
   <div class="slideshow-container">
@@ -84,19 +95,45 @@
 
   </div>
 
+   <!-- Bu alan arama sonuçlarını göstermek için -->
+   <div id="search-results"></div>
+
   <div class="title-movies-container"></div>
   <div class="title-movies-container1"></div>
 
   <div class="home-movies-title">Popular Movies</div>
 
   <main id="movies">
-    <div class="movie">
-      <span class="vote" data-vote="4.7">4.7</span>
-      <div class="movie-info">
-        <h3>Movie Title</h3>
+  <div class="movie" data-id="12345">
+    <span class="vote" data-vote="4.7">4.7</span>
+    <div class="movie-info">
+      <h3>Movie Title</h3>
+    </div>
+  </div>
+</main>
+
+
+<!-- Modal Yapısı -->
+<div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="movieModalLabel">Movie Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalPoster" src="" alt="Movie Poster" class="img-fluid">
+        <p id="modalOverview"></p>
+        <p><strong>Rating:</strong> <span id="modalRating"></span></p>
+        <p><strong>Release Date:</strong> <span id="modalReleaseDate"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-  </main>
+  </div>
+</div>
+
 
   <!--   
   <div class="title-series-container"></div> 
@@ -146,6 +183,87 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
     crossorigin="anonymous"></script>
+
+
+  <script>
+    const api_key = 'f3090c60bbf7d2ca05c8a7afe0f60361'; // TMDB API anahtarınızı buraya yazın
+    const search_url = `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=`; // Hem film hem dizi arayacak
+    const movie_url = `https://api.themoviedb.org/3/movie/`;
+
+
+    function search() {
+      const searchInput = document.getElementById('search-input').value; // Arama inputunu al
+      if (searchInput.trim() !== '') { // Boş arama yapılmasını önle
+        fetch(search_url + encodeURIComponent(searchInput)) // Arama sorgusu ile TMDB'ye istek gönder
+          .then(response => response.json())
+          .then(data => showSearchResults(data.results))
+          .catch(error => console.error('Hata:', error));
+      }
+    }
+
+    function showSearchResults(results) {
+      const searchResultsContainer = document.getElementById('search-results');
+      searchResultsContainer.innerHTML = ''; // Önceki sonuçları temizle
+
+      if (results.length === 0) {
+        searchResultsContainer.innerHTML = '<p>No results found.</p>';
+        return;
+      }
+
+      results.forEach(item => {
+        const resultItem = document.createElement('div');
+        resultItem.classList.add('result-item');
+
+        let title = item.title || item.name; // Film için title, dizi için name
+        let posterPath = item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'default.jpg'; // Poster varsa göster yoksa default resim
+
+        resultItem.innerHTML = `
+            <img src="${posterPath}" alt="${title}">
+            <h3>${title}</h3>
+            <p>Rating: ${item.vote_average}</p>
+        `;
+
+        searchResultsContainer.appendChild(resultItem);
+      });
+    }
+  </script>
+
+
+<script>
+  // TMDB API anahtarınızı ve temel URL'yi tanımlayın
+
+  // Film kartlarına tıklama olayı için dinleyici ekleyin
+document.addEventListener('DOMContentLoaded', () => {  
+  document.querySelectorAll('.movie').forEach(movie => {
+    movie.addEventListener('click', () => {
+      const movieId = movie.getAttribute('data-id'); // Her film kartına ID atayın
+      fetchMovieDetails(movieId);
+    });
+  });
+});
+
+
+  // Film detaylarını çekme ve modal'a doldurma fonksiyonu
+  function fetchMovieDetails(movieId) {
+    fetch(`${movie_url}${movieId}?api_key=${api_key}`)
+      .then(response => response.json())
+      .then(data => {
+        // Modal bilgilerini güncelle
+        document.getElementById('movieModalLabel').innerText = data.title || data.name;
+        document.getElementById('modalPoster').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+        document.getElementById('modalOverview').innerText = data.overview;
+        document.getElementById('modalRating').innerText = data.vote_average;
+        document.getElementById('modalReleaseDate').innerText = data.release_date;
+
+        // Modal'ı göster
+        const movieModal = new bootstrap.Modal(document.getElementById('movieModal'));
+        movieModal.show();
+      })
+      .catch(error => console.error('Error fetching movie details:', error));
+  }
+</script>
+
+
 
 </body>
 
