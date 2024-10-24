@@ -1,99 +1,69 @@
 const api_key = 'f3090c60bbf7d2ca05c8a7afe0f60361'; // API anahtarınızı buraya yazın
-const genres_list_http = 'https://api.themoviedb.org/3/genre/movie/list'; // film türlerini getirecek
-const movie_topRated_http = 'https://api.themoviedb.org/3/movie/top_rated'; // top rated filmleri getirecek
+const base_url = 'https://api.themoviedb.org/3';
+const movie_genre_url = base_url + '/genre/movie/list';
+const movie_topRated_http = base_url + '/movie/top_rated'; 
 
-const categoryList = document.getElementById('category-list');
-const movieTopRated = document.querySelector('.movieTopRated');
+function fetchMovieCategories() {
+  fetchCategories(movie_genre_url);
+}
 
-fetch(genres_list_http + '?api_key=' + api_key)
-  .then(async data => showCategories(await data.json()))
-  .catch(error => console.error('Hata:', error));
+function fetchCategories(url) {
+  fetch(url + '?api_key=' + api_key)
+      .then(async data => showCategories(await data.json()))
+      .catch(error => console.error('Hata:', error));
+}
 
 function showCategories(data) {
+  const categoryList = document.getElementById('category-list');
+
   console.log(data);
   categoryList.innerHTML = '';
   data.genres.forEach(category => {
-    const { name } = category;
-    const categoryElement = document.createElement('li');
+      const { name } = category;
+      const categoryElement = document.createElement('li');
 
-    categoryElement.innerHTML = `
-              <li>${name}</li>
-          `;
+      categoryElement.textContent = name;
 
-    categoryList.appendChild(categoryElement);
+      categoryList.appendChild(categoryElement);
   });
 }
-//////////////////////////////////////////////////////////////
-let currentPage = 1;
 
-function fetchMovies(page){
-fetch(movie_topRated_http + '?api_key=' + api_key + '&page=' + page)
-  .then(async data => showTopRatedMovies(await data.json()))
-  .catch(error => console.error('Hata:', error));
+function fetchMovies(page) {
+  fetch(movie_topRated_http + '?api_key=' + api_key + '&page=' + page)
+      .then(async data => showTopRatedMovies(await data.json()))
+      .catch(error => console.error('Hata:', error));
 }
 
 function showTopRatedMovies(data) {
-  console.log(data);
+  const movieTopRated = document.querySelector('.movieTopRated');
   movieTopRated.innerHTML = '';
   data.results.forEach(movie => {
-    const { title, poster_path, vote_average, overview } = movie;
-    const movieTopRatedElement = document.createElement('div');
-   
-    movieTopRatedElement.classList.add('movie');
+      const movieTopRatedElement = document.createElement('div');
+      movieTopRatedElement.classList.add('movie');
 
-    // Puanı formatla ve renk belirle
-    const formattedVote = vote_average.toFixed(1);
-    let voteColor;
-    if (vote_average >= 8) {
-      voteColor = 'green';
-    } else if (vote_average >= 5) {
-      voteColor = 'orange';
-    } else {
-      voteColor = 'red';
-    }
+      const formattedVote = movie.vote_average.toFixed(1);
+      let voteColor;
+      if (movie.vote_average >= 8) {
+          voteColor = 'green';
+      } else if (movie.vote_average >= 5) {
+          voteColor = 'orange';
+      } else {
+          voteColor = 'red';
+      }
 
-    movieTopRatedElement.innerHTML = `
-          <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
+      movieTopRatedElement.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
           <div class="movie-info">
-            <h3>${title}</h3>
+            <h3>${movie.title}</h3>
             <span style="background-color: ${voteColor};">${formattedVote}</span>
           </div>
           <div class="overview">
             <h3>Overview</h3>
-            ${overview}
+            ${movie.overview}
           </div>
       `;
-
-    movieTopRated.appendChild(movieTopRatedElement);
+      movieTopRated.appendChild(movieTopRatedElement);
   });
 }
 
-// "Load More" butonu için bir işlev
-const loadMoreBtn = document.getElementById('load-more-movies'); // Load More butonunu yakalayın
-loadMoreBtn.addEventListener('click', () => {
-  currentPage++; // Sayfayı artır
-  fetchMovies(currentPage); // Yeni sayfayı getir
-});
-
-// İlk sayfa ile başlat
-fetchMovies(currentPage);
-
-
-//ScrollToUp butonu////////////////////////
-// Butonu kontrol eden fonksiyon
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    var mybutton = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block"; // Buton, sayfa aşağı kaydırıldığında görünecek
-    } else {
-        mybutton.style.display = "none"; // Sayfa en üstteyse buton gizlenecek
-    }
-}
-
-// Butona tıklanınca sayfanın en üstüne çıkılmasını sağlayan fonksiyon
-function topFunction() {
-    document.body.scrollTop = 0; // Safari için
-    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE ve Opera için
-}
+fetchMovies(currentMoviePage);

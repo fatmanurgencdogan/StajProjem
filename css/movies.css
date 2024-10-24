@@ -49,33 +49,99 @@ body {
 .home-movies-title {
     font-size: 60px;
     font-family: "Afacad Flux", sans-serif;
-    color: #ffffff;
     font-weight: 700;
     text-align: center;
     position: relative;
-    margin-top: 45px;
+    z-index: 5;
+    color: #ffffff;
+    transform: translate(0,-40px);
 }
 
 .movieTopRated {
     display: flex;
     flex-wrap: wrap;
     margin: 30px 200px 90px 200px;
+    justify-content: space-between;
 }
 
 .movie {
     flex-basis: calc(18% - 5px);
-    max-width: 250px;
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 7px rgba(0, 0, 0, 0.5);
+    background-color: #191919;
     position: relative;
-    margin: 15px;
+    overflow: hidden;
+    max-height: 550px;
+    font-size: 13px;
 }
 
 .movie img {
-    max-width: 250px;
+    width: 100%;
 }
- 
-.movie p {
+
+.movie-info {
+    font-family: "Afacad Flux", sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    background-color: #191919;
+}
+.movie-info h3 {
+    margin: 0;
+}
+
+.movie span {
+    background-color: #ff7930;
+    padding: 0.25rem 0.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-top: -5px;
+
+}
+
+.overview {
+    font-size: 11px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.829);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie:hover .overview {
+    font-family:  "Afacad Flux", sans-serif;
     font-size: 15px;
-} 
+    transform: translateY(0);
+}
+
+@media(max-width: 900px) {
+    .movie {
+        width: calc(50% - 1rem);
+        /* Mobil cihazlarda 2 kart */
+    }
+}
+
+@media(max-width: 600px) {
+    .movie {
+        width: calc(100% - 1rem);
+        /* Küçük ekranlarda 1 kart */
+    }
+}
 
 .search {
     display: flex;

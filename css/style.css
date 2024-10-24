@@ -179,6 +179,87 @@ body {
     transform: translateY(0);
 }
 
+.home-series-name {
+    font-size: 60px;
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    color: #ffffff;
+    transform: translate(0,-40px);
+}
+
+.serieTopRated {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 200px 90px 200px;
+    justify-content: space-between;
+}
+
+.serie {
+    flex-basis: calc(18% - 5px);
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 7px rgba(0, 0, 0, 0.5);
+    background-color: #191919;
+    position: relative;
+    overflow: hidden;
+    max-height: 550px;
+    font-size: 13px;
+}
+
+.serie img {
+    width: 100%;
+}
+.serie-info {
+    font-family: "Afacad Flux", sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    background-color: #191919;
+}
+.serie-info h3 {
+    margin: 0;
+}
+
+.serie span {
+    background-color: #ff7930;
+    padding: 0.25rem 0.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-top: -5px;
+
+}
+
+.serie:hover {
+    transform: scale(1.05);
+}
+
+.serie:hover .overview {
+    font-family:  "Afacad Flux", sans-serif;
+    font-size: 15px;
+    transform: translateY(0);
+}
+
+@media(max-width: 900px) {
+    .serie {
+        width: calc(50% - 1rem);
+        /* Mobil cihazlarda 2 kart */
+    }
+}
+
+@media(max-width: 600px) {
+    .serie {
+        width: calc(100% - 1rem);
+        /* Küçük ekranlarda 1 kart */
+    }
+}
 /* Responsive tasarım için medya sorguları */
 @media(max-width: 1200px) {
     .nav-links a {

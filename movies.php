@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/movies.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
 
-    <script src="js/catalog.js"></script>
+    <script src="css/movies.js"></script>
     <script>
         fetchCategories();
         fetchMovies(1);

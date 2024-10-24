@@ -50,33 +50,80 @@ body {
     font-size: 60px;
     font-family: "Afacad Flux", sans-serif;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 700px;
     text-align: center;
     position: relative;
     margin-top: 45px;
 }
 
 .serieTopRated {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 30px 200px 90px 200px;
+    display: flex; /* Flexbox ile düzenleme yap */
+    justify-content: center; /* İçerikleri yatayda ortala */
+    flex-wrap: wrap; /* Eğer alan yetersizse, satır sonuna geç */
+    margin: 30px 185px 90px 185px;
 }
 
 .serie {
     flex-basis: calc(18% - 5px);
     max-width: 250px;
     position: relative;
-    margin: 15px;
+    margin: 10px;
+    overflow: hidden;
+    background-color: ;
 }
 
 .serie img {
     max-width: 250px;
 }
  
-.serie p {
-    font-size: 15px;
-} 
+.serie-info {
+    font-family: "Afacad Flux", sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    background-color: #191919;
+}
+.serie-info h3 {
+    margin: 0;
+}
 
+.serie span {
+    background-color: #ff7930;
+    padding: 0.25rem 0.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-top: -5px;
+
+}
+
+.serie:hover {
+    transform: scale(1.05);
+}
+
+.serie:hover .overview {
+    font-family:  "Afacad Flux", sans-serif;
+    font-size: 15px;
+    transform: translateY(0);
+}
+
+@media(max-width: 900px) {
+    .serie {
+        width: calc(50% - 1rem);
+        /* Mobil cihazlarda 2 kart */
+    }
+}
+
+@media(max-width: 600px) {
+    .serie {
+        width: calc(100% - 1rem);
+        /* Küçük ekranlarda 1 kart */
+    }
+}
 .search {
     display: flex;
     justify-content: center;
