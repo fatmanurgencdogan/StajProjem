@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="css/movies.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/catalog.js"></script>
+    <script>
+        fetchCategories();
+        fetchMovies(1);
+    </script>
 
     <title>Blue Screen</title>
     <link rel="icon" type="image/x-icon" sizes="167x167" href="css/images/BlueScreenLogo4.png">
@@ -48,19 +53,13 @@
     <div class="categories">
         <ul id="category-list">
             <li class="category-item">Action</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
         </ul>
     </div>
 
     <div class="home-movies-title">Top Rated Movies</div>
-    <div class="moviesTopRated">
-        <div class="movieTopRated">
-            <div class="card" data-id="123456">
+    <div class="movieTopRated">
+        <div class="movie">
+            <div class="card" data-id="789">
                 <div class="poster">
                     <img src="https://unsplash.it/500/1000" alt="">
                 </div>
@@ -74,30 +73,10 @@
             </div>
         </div>
 
+        <button onclick="fetchCategories()" id="def" title="Go to top">=</button>
+
         <button id="load-more-movies">Load More</button>
     </div>
-    <!-- <div class="movies-container trending">
-        <h1>Trending</h1>
-        <div class="movieTopRated">
-            <div class="card" data-id="123456">
-                <div class="img">
-                    <img src="https://unsplash.it/500/1000" alt="">
-                </div>
-                <div class="info">
-                    <h2>Movie Name</h2>
-                    <div class="single-info">
-                        <span>Rate: </span>
-                        <span>10 / 10</span>
-                    </div>
-                    <div class="single-info">
-                        <span>Release Date: </span>
-                        <span>10-04-2022</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> -->
 
     <div class="popup-container">
         <span class="x-icon">&#10006;</span>
@@ -178,13 +157,12 @@
 
     </footer>
 
-    <script src="css/movies.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
         crossorigin="anonymous"></script>
 
-    
-    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
+        <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
+
 </body>
 
 </html>

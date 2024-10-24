@@ -11,16 +11,16 @@ if(isset($_POST["save"])){
     $insert = "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')";
     $runInsert = mysqli_query($connection, $insert);
 
-    if($runInsert){
-        echo '<div class = "alert alert-success" role = "alert">
-        The record has been added successfully.    
-        <\div>';
-    }
-    else{
-        echo '<div class = "alert alert-danger" role = "alert">
-        There was a problem adding a record.    
-        <\div>';
-    }
+    // if($runInsert){
+    //     echo '<div class = "alert alert-success" role = "alert">
+    //     The record has been added successfully.    
+    //     <\div>';
+    // }
+    // else{
+    //     echo '<div class = "alert alert-danger" role = "alert">
+    //     There was a problem adding a record.    
+    //     <\div>';
+    // }
     mysqli_close($connection);
 
 }

@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="css/series.css">
   <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/catalog.js"></script>
+    <script>
+        fetchCategories();
+        fetchSeries(2);
+    </script>    
 
   <title>Blue Screen</title>
   <link rel="icon" type="image/x-icon" sizes="167x167" href="BlueScreenLogo4.png">
@@ -47,20 +52,14 @@
   <div class="categories">
         <ul id="category-list">
             <li class="category-item">Action</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
-            <li class="category-item">Horror</li>
         </ul>
   </div>
   
-  <div class="home-series-title">Top Rated Series</div>
-    <div class="allSeriesTopRated">
-        <div class="seriesTopRated">
+  <div class="home-series-name">Top Rated Series</div>
+    <div class="serieTopRated">
+        <div class="serie">
             <div class="card" data-id="123456">
-                <div class="poster">
+                <div class="series">
                     <img src="https://unsplash.it/500/1000" alt="">
                 </div>
                 <h3>Series Name</h3>
@@ -72,6 +71,8 @@
                 </div>
             </div>
         </div>
+
+        <button onclick="fetchCategories()" id="abc" title="Go to top">=</button>
 
       <button id="load-more-series">Load More</button>
   </div>
@@ -131,6 +132,7 @@
             </div>
         </div>
   </div>
+
   <footer class="footer">
 
     <div class="footer-content">
@@ -153,13 +155,12 @@
 
   </footer>
 
-  <script src="css/series.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-o2E8t0cP1+wC06K1WjML58b9W8jPvEjGmW/i+T7gT7/qe26QiTVAc6gvUzD1A5r9"
   crossorigin="anonymous"></script>
 
 
-  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">⬆</button>
+  <button onclick="topFunction()" id="scrollTopButton" title="Go to top">⬆</button>
 
 </body>
 
