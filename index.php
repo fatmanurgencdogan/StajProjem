@@ -43,8 +43,8 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
     <div class="profile">
       <?php if (isset($_SESSION['username'])): ?>
         <!-- Eğer kullanıcı giriş yapmışsa Profil ve Çıkış Yap göster -->
-        <a href="profile.php">Profil</a>
-        <a href="logout.php">Çıkış Yap</a>
+        <a href="profile.php">Profile</a>
+        <a href="logout.php">Log Out</a>
       <?php else: ?>
         <!-- Giriş yapılmamışsa Log In / Sign Up göster -->
         <a href="login.php">Log In</a>
@@ -95,8 +95,8 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
 
   </div>
 
-   <!-- Bu alan arama sonuçlarını göstermek için -->
-   <div id="search-results"></div>
+  <!-- Bu alan arama sonuçlarını göstermek için -->
+  <div id="search-results"></div>
 
   <div class="title-movies-container"></div>
   <div class="title-movies-container1"></div>
@@ -104,35 +104,19 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
   <div class="home-movies-title">Popular Movies</div>
 
   <main id="movies">
-  <div class="movie" data-id="12345">
-    <span class="vote" data-vote="4.7">4.7</span>
-    <div class="movie-info">
-      <h3>Movie Title</h3>
-    </div>
-  </div>
-</main>
+    <a href="movie_detail.php?id=12345">
+      <div class="movie" data-id="12345">
+        <span class="vote" data-vote="4.7">4.7</span>
+        <div class="movie-info">
+          <h3>Movie Title</h3>
+        </div>
+      </div>
+    </a>
+
+  </main>
 
 
-<!-- Modal Yapısı -->
-<div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="movieModalLabel">Movie Title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img id="modalPoster" src="" alt="Movie Poster" class="img-fluid">
-        <p id="modalOverview"></p>
-        <p><strong>Rating:</strong> <span id="modalRating"></span></p>
-        <p><strong>Release Date:</strong> <span id="modalReleaseDate"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
   <!--   
@@ -229,39 +213,6 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
   </script>
 
 
-<script>
-  // TMDB API anahtarınızı ve temel URL'yi tanımlayın
-
-  // Film kartlarına tıklama olayı için dinleyici ekleyin
-document.addEventListener('DOMContentLoaded', () => {  
-  document.querySelectorAll('.movie').forEach(movie => {
-    movie.addEventListener('click', () => {
-      const movieId = movie.getAttribute('data-id'); // Her film kartına ID atayın
-      fetchMovieDetails(movieId);
-    });
-  });
-});
-
-
-  // Film detaylarını çekme ve modal'a doldurma fonksiyonu
-  function fetchMovieDetails(movieId) {
-    fetch(`${movie_url}${movieId}?api_key=${api_key}`)
-      .then(response => response.json())
-      .then(data => {
-        // Modal bilgilerini güncelle
-        document.getElementById('movieModalLabel').innerText = data.title || data.name;
-        document.getElementById('modalPoster').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-        document.getElementById('modalOverview').innerText = data.overview;
-        document.getElementById('modalRating').innerText = data.vote_average;
-        document.getElementById('modalReleaseDate').innerText = data.release_date;
-
-        // Modal'ı göster
-        const movieModal = new bootstrap.Modal(document.getElementById('movieModal'));
-        movieModal.show();
-      })
-      .catch(error => console.error('Error fetching movie details:', error));
-  }
-</script>
 
 
 

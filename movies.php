@@ -14,6 +14,8 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
     <!-- <link rel="stylesheet" href="css/style.css"> -->
 
     <script src="css/movies.js"></script>
+    <script src="css/script.js"></script>
+
     <script>
         fetchCategories();
         fetchMovies(1);
@@ -69,6 +71,7 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
     <div class="home-movies-title">Top Rated Movies</div>
     <div class="movieTopRated">
         <div class="movie">
+        <a href="movie_detail.php?id=12345">
             <div class="card" data-id="789">
                 <div class="poster">
                     <img src="https://unsplash.it/500/1000" alt="">
@@ -81,6 +84,7 @@ session_start(); // Oturum verilerini kullanabilmek için oturumu başlatıyoruz
                     </div>
                 </div>
             </div>
+        </a>
         </div>
 
         <button onclick="fetchCategories()" id="def" title="Go to top">=</button>

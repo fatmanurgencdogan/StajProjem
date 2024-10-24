@@ -1,6 +1,6 @@
 const API_KEY = 'f3090c60bbf7d2ca05c8a7afe0f60361';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY ;
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const movies = document.getElementById('movies');
 
@@ -8,23 +8,19 @@ getMovies(API_URL);
 
 function getMovies(url) {
   fetch(url).then(res => res.json()).then(data => {
-    console.log(data.results)
+    console.log(data.results);
     showMovies(data.results);
   })
   .catch(error => console.log('Fault:', error));
-
-  fetch(BASE_URL+'/search/movie?query=Azrael&api_key='+ API_KEY ).then(res => res.json()).then(data => {
-    console.log(data.results)
-  })
-  .catch(error => console.log('Fault:', error));
+  
+  // Arama işlevini kullanmaya gerek yok, kaldırdım
 }
 
 function showMovies(data) {
-  movies.innerHTML = '';
+  movies.innerHTML = ''; // Önceki filmleri temizle
 
   data.forEach(movie => {
-    console.log(data);
-    const {title, poster_path, vote_average, overview} = movie;
+    const { title, poster_path, vote_average, overview, id } = movie; // id'yi al
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
 
@@ -40,15 +36,17 @@ function showMovies(data) {
     }
 
     movieEl.innerHTML = `
-        <img src="${IMG_URL + poster_path}" alt="${title}">
-        <div class="movie-info">
-          <h3>${title}</h3>
-          <span style="background-color: ${voteColor};">${formattedVote}</span>
-        </div>
-        <div class="overview">
-          <h3>Overview</h3>
-          ${overview}
-        </div>
+        <a href="movie_detail.php?id=${id}"> <!-- Tıklanabilir link ekledik -->
+          <img src="${IMG_URL + poster_path}" alt="${title}">
+          <div class="movie-info">
+            <h3>${title}</h3>
+            <span style="background-color: ${voteColor};">${formattedVote}</span>
+          </div>
+          <div class="overview">
+            <h3>Overview</h3>
+            ${overview}
+          </div>
+        </a>
     `;
 
     movies.appendChild(movieEl);
